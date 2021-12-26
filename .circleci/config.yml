@@ -14,7 +14,6 @@ aliases:
 
 orbs:
   node: circleci/node@4
-  slack: circleci/slack@4
 
 jobs:
   lint:
@@ -24,14 +23,10 @@ jobs:
     steps:
       - checkout
       - node/install-packages
-      - run: npm run lint:prettier
-      - run: npm run lint:eslint -- --format junit --output-file reports/eslint/results.xml
+      - run: npm run lint
 
 workflows:
   build:
     jobs:
       - lint:
           node-version: lts
-          post-steps:
-            - store_test_results:
-                path: reports
