@@ -1,3 +1,3 @@
 # renovate-config
 
-Default renovatebot config
+Moved to https://github.com/JaneJeon/dev/tree/master/packages/renovate-config
